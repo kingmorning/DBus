@@ -43,6 +43,7 @@ public class SimpleProxyServlet extends ProxyServlet {
         cache.put("/mgr/", buildURL("/mgr/", proxyProps, "manager.server.port"));
         cache.put("/dbus/", buildURL("/dbus/", proxyProps, "http.server.port"));
         cache.put("/webservice/", buildURL("/webservice/", proxyProps, "rest.server.port"));
+        cache.put("/tarsier-manager/", buildURL("/tarsier-manager/", proxyProps, "tarsier.manager.server.port"));
     }
 
     private String buildURL(String cacheKey, Properties props, String key) {

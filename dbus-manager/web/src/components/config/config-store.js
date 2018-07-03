@@ -3,7 +3,7 @@ var Reflux = require('reflux');
 var $ = require('jquery')
 var utils = require('../common/utils');
 
-var actions = Reflux.createActions([ 'storm_check','global_config','monitor_config','storm_config','user_config','heartbeatInterval','checkInterval','checkFullPullInterval', 'deleteFullPullOldVersionInterval',
+var actions = Reflux.createActions([ 'storm_check','global_config','collect_config','monitor_config','alarm_config','storm_config','user_config','heartbeatInterval','checkInterval','checkFullPullInterval', 'deleteFullPullOldVersionInterval',
                                      'maxAlarmCnt', 'heartBeatTimeout',"fullPullTimeout",'alarmTtl":"lifeInterval','correcteValue','fullPullCorrecteValue',
                                      'fullPullSliceMaxPending','leaderPath','controlPath','monitorPath','monitorFullPullPaht','excludeSchema',
                                      'checkPointPerHeartBeatCnt','fullPullOldVersionCnt','adminSMSNo','adminUseSMS','adminEmail',
@@ -133,6 +133,14 @@ var store = Reflux.createStore({
     onMonitor_config:function(new_value){
         var self = this;
         self.state.data.global_config.monitor_url= new_value;
+    },
+    onCollect_config:function(new_value){
+        var self = this;
+        self.state.data.global_config.collect_url= new_value;
+    },
+    onAlarm_config:function(new_value){
+        var self = this;
+        self.state.data.global_config.alarm_url= new_value;
     },
     onStorm_config:function(new_value){
         var self = this;

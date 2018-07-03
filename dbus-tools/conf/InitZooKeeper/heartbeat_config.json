@@ -21,6 +21,7 @@
   "leaderPath": "/DBus/HeartBeat/Leader",
   "controlPath": "/DBus/HeartBeat/Control",
   "monitorPath": "/DBus/HeartBeat/Monitor",
+  "tarsierPath": "/DBus/HeartBeat/Tarsier",
   "monitorFullPullPath": "/DBus/FullPuller",
   "excludeSchema": "monitor",
   "checkPointPerHeartBeatCnt":1,

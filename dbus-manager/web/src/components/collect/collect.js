@@ -1,0 +1,51 @@
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Reflux = require('reflux');
+var store = require('./collect-store');
+var utils = require('../common/utils');
+var $ = require('jquery');
+
+     
+var Collect = React.createClass({
+    mixins: [Reflux.listenTo(store, "_onStatusChange")],
+    getInitialState: function() {
+        var state = store.initState();
+            return state;
+    },
+    _onStatusChange: function(state) {
+            this.setState(state);
+    },
+    getRect: function() {
+        var d = $(document);
+        return {
+            width: d.width() - 195,
+            height: d.height() - 40
+        }
+    },
+    componentWillMount:function(){
+        store.actions.geturl();
+    },
+    componentDidMount: function() {
+        var self = this;
+        this.resetFrame();
+        $(window).on("resize", function() {
+            self.resetFrame();
+        });
+        //utils.showLoading();
+    },
+    resetFrame: function() {
+        var rect = this.getRect();
+        $("iframe").css({width:rect.width + "px", height:rect.height+"px"});
+    },
+    render: function() {
+        return (
+            <div id="collect">
+                <iframe src={this.state.url}></iframe>
+            </div>
+        );
+    }
+});
+
+
+module.exports = Collect;

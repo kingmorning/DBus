@@ -57,7 +57,7 @@ public class DataShardsSplittingSpout extends BaseRichSpout {
     private static final long serialVersionUID = 1L;
 
     private long overflowCount = 0;
-    
+
     // 用来发射数据的工具类
     private SpoutOutputCollector collector;
 

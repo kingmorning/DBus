@@ -25,7 +25,7 @@
             <appender-ref ref="RollingFile"/>
             <appender-ref ref="Console"/>
         </root>
-        <logger name="com.creditease" additivity="false" level="INFO">
+        <logger name="com.creditease" additivity="false" level="DEBUG">
             <appender-ref ref="Console"/>
         </logger>
         <logger name="org.eclipse.jetty" additivity="false" level="INFO">

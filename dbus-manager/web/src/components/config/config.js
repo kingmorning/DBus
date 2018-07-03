@@ -77,9 +77,17 @@ var Config = React.createClass({
         var new_value = e.target.value;
         store.actions.global_config(new_value);
     },
+    collect_config: function (e) {
+        var new_value = e.target.value;
+        store.actions.collect_config(new_value);
+    },
     monitor_config: function (e) {
         var new_value = e.target.value;
         store.actions.monitor_config(new_value);
+    },
+    alarm_config: function (e) {
+        var new_value = e.target.value;
+        store.actions.alarm_config(new_value);
     },
     storm_config: function (e) {
         var new_value = e.target.value;
@@ -281,6 +289,23 @@ var Config = React.createClass({
 
                         <FormGroup>
                             <Col componentClass={ControlLabel} sm={2}>
+                                Collect
+                            </Col>
+                            <Col sm={3}>
+                                <Input
+                                    defaultValue={this.state.data.global_config.collect_url}
+                                    onChange={this.collect_config}
+                                    placeholder="collect url"
+                                    type="textarea"
+                                    focus/>
+                            </Col>
+                            <div style={{color:"#999",fontSize: 13}}>
+                                <Col sm={3}>(收集器url)</Col>
+                            </div>
+                        </FormGroup>
+
+                        <FormGroup>
+                            <Col componentClass={ControlLabel} sm={2}>
                                 Monitor
                             </Col>
                             <Col sm={3}>
@@ -293,6 +318,23 @@ var Config = React.createClass({
                             </Col>
                             <div style={{color:"#999",fontSize: 13}}>
                                 <Col sm={3}>(监控url)</Col>
+                            </div>
+                        </FormGroup>
+
+                        <FormGroup>
+                            <Col componentClass={ControlLabel} sm={2}>
+                                Collect
+                            </Col>
+                            <Col sm={3}>
+                                <Input
+                                    defaultValue={this.state.data.global_config.alarm_url}
+                                    onChange={this.collect_config}
+                                    placeholder="alarm url"
+                                    type="textarea"
+                                    focus/>
+                            </Col>
+                            <div style={{color:"#999",fontSize: 13}}>
+                                <Col sm={3}>(预警规则url)</Col>
                             </div>
                         </FormGroup>
 

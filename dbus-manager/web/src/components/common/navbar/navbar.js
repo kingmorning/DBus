@@ -41,7 +41,7 @@ var NavBar = React.createClass({
                 </B.Navbar.Header>
                 <B.Navbar.Collapse>
                     <B.Nav pullRight>
-                        <B.NavItem href="mailto:bridata@126.com"><span className="glyphicon glyphicon-envelope"></span></B.NavItem>
+                        <B.NavItem href="mailto:steven.wang@cn.mcd.com"><span className="glyphicon glyphicon-envelope"></span></B.NavItem>
                         <B.NavItem href="#config"><span className="glyphicon glyphicon-cog"></span></B.NavItem>
                         <B.NavDropdown title="My Account" id="basic-nav-dropdown">
                             <B.MenuItem onClick={this.logout}><span className="glyphicon glyphicon-log-out"></span> logout</B.MenuItem>

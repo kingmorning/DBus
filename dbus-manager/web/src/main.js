@@ -44,6 +44,8 @@ import DsZkConf from './components/new-ds/step-ds-zkconf'
 import DbusData from './components/dbus-data/dbus-data'
 import StartTopo from './components/new-ds/step-start-topos'
 import Monitor from './components/monitor/Monitor'
+import Collect from './components/collect/collect'
+import Alarm from './components/alarm/Alarm'
 import Login from './components/login/login'
 import Signup from './components/signup/signup'
 import FullPull from './components/fullPull-independently/full-pull'
@@ -89,7 +91,9 @@ ReactDOM.render(
             <Route path='/jar-mgr' component={JarMgr}/>
             <Route path='/zk-manager' component={ZkManager}/>
             <Route path='/dbus-data' component={DbusData}/>
+            <Route path='/collect' component={Collect}/>
             <Route path='/monitor' component={Monitor}/>
+            <Route path='/alarm' component={Alarm}/>
             <Route path='/full-pull' component={FullPull}/>
             <Route path='/fullpull-history' component={FullPullHistory}/>
         </Route>

@@ -35,7 +35,7 @@ var sidebarList = [
     {
         id: 6,
         icon: "glyphicon glyphicon-arrow-right",
-        text: "control message",
+        text: "Control Message",
         href: "/controlMessage",
         isActive: false
     },
@@ -54,10 +54,24 @@ var sidebarList = [
         isActive: false
     },
     {
-        id: 999,
+        id: 997,
+        icon: "glyphicon glyphicon-circle-arrow-down",
+        text: "Data Collect",
+        href: "/collect",
+        isActive: false
+    },
+    {
+        id: 998,
         icon: "glyphicon glyphicon-flash",
-        text: "monitor",
+        text: "Monitor",
         href: "/monitor",
+        isActive: false
+    },
+    {
+        id: 999,
+        icon: "glyphicon glyphicon-tree-deciduous",
+        text: "Alarm Rule",
+        href: "/alarm",
         isActive: false
     },
     {
@@ -77,7 +91,7 @@ var sidebarList = [
     {
         id: 7,
         icon: "glyphicon glyphicon-folder-open",
-        text: "Jar manager",
+        text: "Jar Manager",
         href: "/jar-mgr",
         isActive: false
     }, {

@@ -40,11 +40,14 @@ router.get('/initialLoad', function (req, res) {
                 var global = {};
                 global.bootstrap = prop.get('bootstrap.servers');
                 global.zookeeper = zookeeper;
+                global.collect_url = prop.get('collect_url');
                 global.monitor_url = prop.get('monitor_url');
+                global.alarm_url = prop.get('alarm_url');
                 global.storm = prop.get('stormStartScriptPath');
                 global.stormRest = prop.get('stormRest');
                 _extractor = prop.get('stormStartExtractorScriptPath');
                 global.user = prop.get('user');
+                global.loginUser = req.session.user.name;
                 data_total.global_config = global;
                 var data2_j = JSON.parse(data2);
                 data_total.heartbeat_config = data2_j;
@@ -107,12 +110,18 @@ router.post('/savezk', function (req, res) {
                 var param_str = JSON.stringify(param);
                 prop1.read(param_str+"");
                 prop1.set('bootstrap.servers',param.bootstrap);
+                prop1.set('collect_url',param.collect_url);
                 prop1.set('monitor_url',param.monitor_url);
+                prop1.set('alarm_url',param.alarm_url);
                 prop1.set('stormStartScriptPath',param.storm);
                 prop1.set('user',param.user);
                 prop1.set('stormRest',param.stormRest);
-                var data_11 = 'bootstrap.servers='+prop1.getRaw('bootstrap.servers')+'\n'+'monitor_url='+prop1.getRaw('monitor_url')+'\n'
-                    + 'stormStartScriptPath='+prop1.getRaw('stormStartScriptPath')+'\n' +'user='+prop1.getRaw('user')+'\n' +'stormRest='+prop1.getRaw('stormRest');
+                var data_11 = 'bootstrap.servers='+prop1.getRaw('bootstrap.servers')+'\n'
+                    +'collect_url='+prop1.getRaw('collect_url')+'\n'
+                    +'monitor_url='+prop1.getRaw('monitor_url')+'\n'
+                    +'alarm_url='+prop1.getRaw('alarm_url')+'\n'
+                    + 'stormStartScriptPath='+prop1.getRaw('stormStartScriptPath')+'\n'
+                    +'user='+prop1.getRaw('user')+'\n' +'stormRest='+prop1.getRaw('stormRest');
                 var client = ZooKeeper.createClient(config.zk.connect,{retries:3});
                 client.once('connected', function () {
                     logger.info('Connected to the server.');
