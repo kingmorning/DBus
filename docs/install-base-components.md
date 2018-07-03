@@ -26,6 +26,12 @@ Dbus集群环境最少需要三台Linux服务器，例如服务器信息如下�
 192.168.0.4 db-dbusmgr
 ```
 
+
+
+**所有服务器安装JDK1.8**
+
+
+
 ## 1.2 相关依赖部件说明
 
 | 名称        | 版本号     | 说明                                       |
@@ -270,6 +276,7 @@ listeners=PLAINTEXT://dbus-n3:9092
 分别在dbus-n1、dbus-n2、dbus-n3的/app/dbus/kafka_2.11-0.10.0.0/bin目录下执行如下命令：
 
 ```
+ export JMX_PORT=9999;
 ./kafka-server-start.sh -daemon ../config/server.properties &
 ```
 
@@ -281,7 +288,9 @@ listeners=PLAINTEXT://dbus-n3:9092
 
 推荐下载kafka-manager版本：kafka-manager-1.3.0.8
 
-地址：[https://github.com/yahoo/kafka-manager/releases](https://github.com/yahoo/kafka-manager/releases)
+地址：[https://github.com/yahoo/kafka-manager/releases](https://github.com/yahoo/kafka-manager/releases)  这个地址下载后需要编译打包比较麻烦，
+
+可以从地址: [https://pan.baidu.com/s/10S-65-7vIl2OVQNl52Ms_Q](https://pan.baidu.com/s/10S-65-7vIl2OVQNl52Ms_Q) 直接下载已经编译好的安装包
 
 ## 4.2 安装
 
@@ -344,7 +353,7 @@ nohup ./kafka-manager -Dconfig.file=../conf/application.conf >/dev/null 2>&1 &
 
 ## 4.5 验证
 
-打开浏览器输入：http://dbus-n1:9000/login，出现如下页面：
+打开浏览器输入：http://dbus-n2:9000/login，出现如下页面：
 
 用户名：admin 
 

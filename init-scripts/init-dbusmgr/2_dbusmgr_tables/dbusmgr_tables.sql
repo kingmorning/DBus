@@ -1,5 +1,7 @@
-
+﻿
 SET FOREIGN_KEY_CHECKS=0;
+
+USE dbusmgr;
 
 -- ----------------------------
 -- Table structure for t_avro_schema
