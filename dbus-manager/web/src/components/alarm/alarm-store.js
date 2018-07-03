@@ -21,7 +21,7 @@ var store = Reflux.createStore({
                 alert("加载失败");
                 return;
             }
-            self.state.url=result.data.global_config.alarm_url;
+            self.state.url=result.data.global_config.alarm_url+"?userName="+result.data.global_config.loginUser;
             self.trigger(self.state);
         });
     },

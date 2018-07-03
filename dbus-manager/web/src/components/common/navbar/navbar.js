@@ -35,7 +35,7 @@ var NavBar = React.createClass({
             <B.Navbar inverse>
                 <B.Navbar.Header>
                     <B.Navbar.Brand>
-                        <a href="#">DBus</a>
+                        <a href="#">MEDB</a>
                     </B.Navbar.Brand>
                     <B.Navbar.Toggle />
                 </B.Navbar.Header>
