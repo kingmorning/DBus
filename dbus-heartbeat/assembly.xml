@@ -7,16 +7,16 @@
     </formats>
     <fileSets>
         <fileSet>
-            <directory>${project.basedir}\conf</directory>
-            <outputDirectory>\conf</outputDirectory>
+            <directory>${project.basedir}${file.separator}conf</directory>
+            <outputDirectory>${file.separator}conf</outputDirectory>
         </fileSet>
         <fileSet>
-            <directory>${project.basedir}\lib</directory>
-            <outputDirectory>\lib</outputDirectory>
+            <directory>${project.basedir}${file.separator}lib</directory>
+            <outputDirectory>${file.separator}lib</outputDirectory>
         </fileSet>
         <fileSet>
-            <directory>${project.basedir}\sh</directory>
-            <outputDirectory>\</outputDirectory>
+            <directory>${project.basedir}${file.separator}sh</directory>
+            <outputDirectory>${file.separator}</outputDirectory>
         </fileSet>
     </fileSets>
     <dependencySets>

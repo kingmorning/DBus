@@ -323,7 +323,7 @@ var Config = React.createClass({
 
                         <FormGroup>
                             <Col componentClass={ControlLabel} sm={2}>
-                                Collect
+                                Alarm Rule
                             </Col>
                             <Col sm={3}>
                                 <Input
